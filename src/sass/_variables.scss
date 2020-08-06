@@ -1,3 +1,12 @@
-#root {
-  background-color: red;
-}
+$border-radius: 0;
+$border-radius-lg: 0;
+$border-radius-sm: 0;
+
+$primary: rgb(0, 140, 69);
+$secondary: rgb(244, 245, 240);
+$tertiary: rgb(205, 33, 42);
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "tertiary": $tertiary,
+);

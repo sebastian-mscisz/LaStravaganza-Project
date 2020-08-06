@@ -1,11 +1,12 @@
 import React, { Component } from "react";
+import ItemList from "./ItemList";
 
 class Content extends Component {
   render() {
     return (
-      <nav>
-        <div className="zaw">Zawartosc</div>
-      </nav>
+      <div className="container bg-secondary">
+        <ItemList />
+      </div>
     );
   }
 }

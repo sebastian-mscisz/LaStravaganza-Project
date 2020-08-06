@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Margarita",
+    "ingredients": "Parmezan, majeranek",
+    "price": "29,99 zł"
+  },
+  {
+    "id": 2,
+    "name": "Funghi",
+    "ingredients": "Parmezan, Pieczarki",
+    "price": "32,99 zł"
+  },
+  {
+    "id": 3,
+    "name": "Siciliana",
+    "ingredients": "Parmezan, Ananas, Szynka parmeńska",
+    "price": "34,99 zł"
+  }
+]

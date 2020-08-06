@@ -1,6 +1,7 @@
 const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   mode: "production",
@@ -8,7 +9,7 @@ module.exports = {
     main: "./src/components/index.js",
   },
   output: {
-    filename: "[name]-[contentHash:6].js",
+    filename: "js/[name]-[contentHash:6].js",
     path: path.resolve(__dirname, "../", "build"),
   },
   module: {
@@ -25,12 +26,24 @@ module.exports = {
           },
         },
       },
+      { test: /\.css$/, use: [MiniCssExtractPlugin.loader, "css-loader"] },
+      {
+        test: /\.(sass|scss)$/,
+        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+      },
+      {
+        test: /\.(svg|eot|woff|woff2|ttf)$/,
+        use: ["file-loader"],
+      },
     ],
   },
   devServer: {
     open: true,
   },
   plugins: [
+    new MiniCssExtractPlugin({
+      filename: "css/[name]-[contentHash:6].css",
+    }),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       filename: "index.html",

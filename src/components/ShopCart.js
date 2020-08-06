@@ -4,8 +4,8 @@ class ShopCart extends Component {
   render() {
     return (
       <div className="navbar-nav">
-        <a href="#">
-          <span class="fas fa-shopping-cart text-dark"></span>
+        <a href="#" className="text-secondary">
+          Koszyk <span className="fas fa-shopping-cart text-secondary"></span>
         </a>
       </div>
     );

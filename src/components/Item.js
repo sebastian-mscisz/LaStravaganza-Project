@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 
-class Item extends Component {
-  render() {
-    return (
-      <div className="navbar-nav">
-        <a href="#">
-          <span class="fas fa-shopping-cart text-dark"></span>
-        </a>
-      </div>
-    );
-  }
-}
+const Item = (props) => {
+  console.log(props);
+  return (
+    <li key={props.id}>
+      {props.name} - {props.price}
+      <br />
+      {props.ingredients}
+      <hr />
+    </li>
+  );
+};
 
 export default Item;

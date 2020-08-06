@@ -1,20 +1,21 @@
 import React, { Component } from "react";
 
-class Footer extends Component {
-  render() {
-    return (
-      <footer>
-        <div className="container bg-tertiary">
+const Footer = () => {
+  return (
+    <footer>
+      <div className="bg-tertiary">
+        <div className="container">
           <div className="row">
-            <div className="col-md-7">infoinfo infoinfoinfo</div>
-            <div className="col-md-5">
+            <div className="col-md-4">infoinfo infoinfoinfo</div>
+            <div className="col-md-4">infoinfo infoinfoinfo</div>
+            <div className="col-md-4">
               newsletternewsletter newsletternewsletternewsletter
             </div>
           </div>
         </div>
-      </footer>
-    );
-  }
-}
+      </div>
+    </footer>
+  );
+};
 
 export default Footer;

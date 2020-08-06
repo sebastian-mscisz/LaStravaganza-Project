@@ -1,23 +1,23 @@
 import React, { Component } from "react";
 import Item from "./Item";
-import data from "../assets/data/menu.json";
 
-class ItemList extends Component {
-  state = {
-    itemList: [],
-  };
-  componentDidMount() {
-    this.setState({
-      itemList: JSON.stringify(data),
-    });
-  }
-  render() {
-    return (
-      <>
-        <div className="navbar-nav">{this.state.itemList}</div>
-      </>
-    );
-  }
-}
+const ItemList = (props) => {
+  const items = props.list.map((item) => (
+    <Item
+      id={item.id}
+      name={item.name}
+      price={item.price}
+      ingredients={item.ingredients}
+    />
+  ));
+  return (
+    <>
+      <div className="navbar-nav">
+        <h1 className="h1 text-center">Menu</h1>
+        <ul>{items}</ul>
+      </div>
+    </>
+  );
+};
 
 export default ItemList;

@@ -1,13 +1,7 @@
 import React, { Component } from "react";
 
-class Logo extends Component {
-  render() {
-    return (
-      <a href="#" className="navbar-brand bg-secondary">
-        L-O-G-O
-      </a>
-    );
-  }
-}
+const Logo = () => {
+  return <p className="navbar-brand">L-O-G-O</p>;
+};
 
 export default Logo;

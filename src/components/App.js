@@ -1,15 +1,16 @@
-import React, { Component } from "react";
-import Header from "./Header";
-import Footer from "./Footer";
-import Content from "./Content";
+import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import Header from "./layouts/Header";
+import Footer from "./layouts/Footer";
+import Page from "./pages/Page";
 
 const App = () => {
   return (
-    <>
+    <Router>
       <Header />
-      <Content />
+      <Page />
       <Footer />
-    </>
+    </Router>
   );
 };
 

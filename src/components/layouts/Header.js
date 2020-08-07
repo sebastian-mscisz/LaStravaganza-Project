@@ -1,7 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 import Logo from "./Logo";
-import Menu from "./Menu";
-import ShopCart from "./ShopCart";
+import Menu from "./Navigation";
 
 const Header = () => {
   return (
@@ -25,7 +24,6 @@ const Header = () => {
             id="navbarMenu"
           >
             <Menu />
-            <ShopCart />
           </div>
         </div>
       </nav>

@@ -8,6 +8,7 @@ const ItemList = (props) => {
       name={item.name}
       price={item.price}
       ingredients={item.ingredients}
+      handleAddItem={props.handleAddItem}
     />
   ));
   return (

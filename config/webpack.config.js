@@ -11,6 +11,7 @@ module.exports = {
   output: {
     filename: "js/[name]-[contentHash:6].js",
     path: path.resolve(__dirname, "../", "build"),
+    publicPath: "/",
   },
   module: {
     rules: [
@@ -39,6 +40,7 @@ module.exports = {
   },
   devServer: {
     open: true,
+    historyApiFallback: true,
   },
   plugins: [
     new MiniCssExtractPlugin({

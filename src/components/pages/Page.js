@@ -15,13 +15,21 @@ class Page extends Component {
   handleAddItem = (item) => {
     const orderList = [...this.state.orderList];
     orderList.push({
+      id: item.id,
       name: item.name,
       price: item.price,
       ingredients: item.ingredients,
     });
-    console.log(this.state.orderList);
     this.setState({
       orderList: orderList,
+    });
+  };
+  handleRemoveItem = (id) => {
+    const orderList = [...this.state.orderList];
+    const index = orderList.findIndex((order) => order.id === id);
+    orderList.splice(index, 1);
+    this.setState({
+      orderList,
     });
   };
   getOrderListLength() {
@@ -45,7 +53,7 @@ class Page extends Component {
           render={(props) => (
             <BasketPage
               {...props}
-              orderLength={() => this.getOrderListLength()}
+              handleRemoveItem={this.handleRemoveItem}
               orderList={this.state.orderList}
             />
           )}

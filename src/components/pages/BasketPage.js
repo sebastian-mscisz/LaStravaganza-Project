@@ -1,12 +1,16 @@
 import React from "react";
+import RemoveFromCartButton from "../layouts/RemoveFromCartButton";
 
 const BasketPage = (props) => {
   const orderList = props.orderList.map((item) => (
     <p>
-      {item.name} - {item.price} - {item.ingredients}
+      {item.name} - {item.price} - {item.ingredients} -{" "}
+      <RemoveFromCartButton
+        handleRemoveItem={props.handleRemoveItem}
+        itemId={item.id}
+      />
     </p>
   ));
-  console.log(orderList);
 
   return (
     <div className="container">

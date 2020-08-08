@@ -2,21 +2,69 @@
   "results": [
     {
       "id": 1,
-      "name": "Margarita",
-      "ingredients": "Parmezan, majeranek",
-      "price": "29,99 zł"
+      "name": "Margharita",
+      "ingredients": "sos pomidorowy, parmezan, pomidor",
+      "price": "19 zł"
     },
     {
       "id": 2,
       "name": "Funghi",
-      "ingredients": "Parmezan, Pieczarki",
-      "price": "32,99 zł"
+      "ingredients": "sos pomidorowy, parmezan, pieczarki",
+      "price": "20 zł"
     },
     {
       "id": 3,
-      "name": "Siciliana",
-      "ingredients": "Parmezan, Ananas, Szynka parmeńska",
-      "price": "34,99 zł"
+      "name": "Salami",
+      "ingredients": "sos pomidorowy, parmezan, salami",
+      "price": "23 zł"
+    },
+    {
+      "id": 4,
+      "name": "Prosciutto Cotto",
+      "ingredients": "sos pomidorowy, parmezan, szynka parmeńska",
+      "price": "22 zł"
+    },
+    {
+      "id": 5,
+      "name": "Vegetariana",
+      "ingredients": "sos pomidorowy, parmezan, pieczarki, cebula, papryka",
+      "price": "22 zł"
+    },
+    {
+      "id": 6,
+      "name": "Hawaii",
+      "ingredients": "sos pomidorowy, parmezan, ananas, szynka parmeńska",
+      "price": "24 zł"
+    },
+    {
+      "id": 7,
+      "name": "Capriciosa",
+      "ingredients": "sos pomidorowy, parmezan, pieczarki, szynka parmeńska",
+      "price": "24 zł"
+    },
+    {
+      "id": 8,
+      "name": "Bonano e spinacci",
+      "ingredients": "sos pomidorowy, parmezan, ser pleśniowy, szpinak, cebula",
+      "price": "27 zł"
+    },
+    {
+      "id": 9,
+      "name": "Pescatore",
+      "ingredients": "sos pomidorowy, parmezan, cebula, tuńczyk, ananas, czosnek",
+      "price": "27 zł"
+    },
+    {
+      "id": 10,
+      "name": "Napoletana",
+      "ingredients": "sos pomidorowy, anchois, kapary, oliwki, czosnek, oregano",
+      "price": "27 zł"
+    },
+    {
+      "id": 11,
+      "name": "Quattro formaggi",
+      "ingredients": "sos śmietanowy, parmezan, mozarella, gorgonzola, ser pleśniowy",
+      "price": "33 zł"
     }
   ]
 }

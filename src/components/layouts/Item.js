@@ -6,6 +6,7 @@ const Item = (props) => {
     <li key={props.id}>
       {props.name} - {props.price}{" "}
       <AddToCartButton
+        id={props.id}
         name={props.name}
         price={props.price}
         ingredients={props.ingredients}

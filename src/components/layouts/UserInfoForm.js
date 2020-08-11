@@ -1,113 +1,151 @@
 import React from "react";
-import Example from "./Example";
 import FormField from "./FormField";
-import { useForm } from "react-hook-form";
 
 const UserInfoForm = (props) => {
-  const { handleSubmit } = useForm();
-  const onSubmit = (values) => console.log(values);
+  const { errors, messages } = props;
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="pb-3 pt-3">
-      <div className="form-group">
+    <form onSubmit={props.handleSubmit} className="pb-3 pt-3">
+      <div className="form-group" onChange={props.handleUserInfoChange}>
         <label>Sposób dostawy:</label>
         <FormField
           id="deliveryOption1"
           type="radio"
-          radioName="deliveryOptions"
+          radioName="deliveryMethod"
           value="delivery"
           labelText="Dostawa"
         />
         <FormField
           id="deliveryOption2"
           type="radio"
-          radioName="deliveryOptions"
+          radioName="deliveryMethod"
           value="selfTake"
           labelText="Odbiór własny"
         />
+        {errors.deliveryMethod && messages.deliveryMessage}
       </div>
       <FormField
         id="inputName"
         type="text"
+        name="name"
         placeholder="Podaj imię..."
         value={props.userInfo.name}
         labelText="Imię i nazwisko:"
-        required="Pole wymagane!"
+        handleUserInfoChange={props.handleUserInfoChange}
+        error={errors.name}
+        errorMessage={messages.requiredMessage}
       />
       <FormField
         id="inputCity"
         type="text"
+        name="city"
         placeholder="Podaj miasto..."
         value={props.userInfo.city}
         labelText="Miasto:"
-        required="Pole wymagane!"
+        handleUserInfoChange={props.handleUserInfoChange}
+        error={errors.name}
+        errorMessage={messages.requiredMessage}
       />
       <FormField
         id="inputAddress"
         type="text"
+        name="address"
         placeholder="Podaj nazwę ulicy..."
         value={props.userInfo.address}
         labelText="Ulica:"
-        required="Pole wymagane!"
+        handleUserInfoChange={props.handleUserInfoChange}
+        error={errors.name}
+        errorMessage={messages.requiredMessage}
       />
       <FormField
         id="inputNraddress"
         type="text"
+        name="nrAddress"
         placeholder="Podaj numer domu/mieszkania..."
         value={props.userInfo.nrAddress}
         labelText="Nr domu/mieszkania:"
-        required="Pole wymagane!"
+        handleUserInfoChange={props.handleUserInfoChange}
+        error={errors.name}
+        errorMessage={messages.requiredMessage}
       />
       <FormField
         id="inputNumber"
-        type="text"
+        type="tel"
+        name="number"
         placeholder="Podaj numer telefonu..."
         value={props.userInfo.number}
         labelText="Tel. komórkowy:"
-        required="Pole wymagane!"
+        handleUserInfoChange={props.handleUserInfoChange}
+        error={errors.number}
+        errorMessage={messages.numberMessage}
       />
       <FormField
         id="inputEmail"
         type="text"
+        name="email"
         placeholder="Podaj adres email..."
         value={props.userInfo.email}
         labelText="Email:"
+        handleUserInfoChange={props.handleUserInfoChange}
+        error={errors.email}
+        errorMessage={messages.emailMessage}
       />
       <FormField
         id="inputComments"
         type="text"
+        name="comments"
         placeholder="Dodatkowe uwagi do zamówienia..."
         value={props.userInfo.comments}
         labelText="Uwagi:"
+        handleUserInfoChange={props.handleUserInfoChange}
       />
-      <div className="form-group">
+      <div className="form-group" onChange={props.handleUserInfoChange}>
         <label>Metoda płatności:</label>
         <FormField
           id="paymentOption1"
           type="radio"
-          radioName="paymentOptions"
+          radioName="paymentMethod"
           value="cash"
           labelText="Gotówka"
         />
         <FormField
           id="paymentOption2"
           type="radio"
-          radioName="paymentOptions"
+          radioName="paymentMethod"
           value="blik"
           labelText="Blik"
         />
         <FormField
           id="paymentOption3"
           type="radio"
-          radioName="paymentOptions"
+          radioName="paymentMethod"
           value="creditcard"
           labelText="Karta płatnicza VISA/MAESTRO/MASTERCARD"
         />
         <FormField
           id="paymentOption4"
           type="radio"
-          radioName="paymentOptions"
+          radioName="paymentMethod"
           value="transfer"
           labelText="Szybki przelew"
+        />
+        {errors.paymentMethod && messages.paymentMessage}
+      </div>
+      <div className="form-group" onChange={props.handleUserInfoChange}>
+        <FormField
+          id="checkboxTerms"
+          type="checkbox"
+          name="termsAccept"
+          value={props.userInfo.termsAccept}
+          labelText="Random zgoda na przetwarzanie lorem ipsum"
+          error={errors.termsAccept}
+          errorMessage={messages.termsMessage}
+        />
+        <FormField
+          id="checkboxNewsletter"
+          type="checkbox"
+          name="newsletterAccept"
+          value={props.userInfo.newsletterAccept}
+          labelText="Random coś tam na newsletter"
         />
       </div>
       <button type="submit" className="btn btn-primary">

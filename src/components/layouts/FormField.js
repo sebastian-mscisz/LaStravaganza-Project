@@ -1,19 +1,17 @@
 import React from "react";
-import { useForm } from "react-hook-form";
 
 const FormField = (props) => {
-  const { register, errors } = useForm();
   const {
     type,
     id,
+    name,
     radioName,
     labelText,
-    required,
     placeholder,
-    invalidMessage,
+    error,
+    errorMessage,
     value,
   } = props;
-  console.log(type);
   let field = "";
   if (type === "radio") {
     field = (
@@ -25,66 +23,53 @@ const FormField = (props) => {
           id={id}
           value={value}
         />
-        {errors.id && errors.id.message}
         <label className="form-check-label" htmlFor={id}>
           {labelText}
         </label>
       </div>
     );
-  } else if (type === "text" && name == "email") {
+  } else if (type === "text" && id == "inputEmail") {
     field = (
       <div className="form-group row">
         <label htmlFor={id} className="col-sm-2 col-form-label">
-          {text}
+          {labelText}
         </label>
         <div className="col-sm-5">
           <input
             type={type}
             className="form-control"
             id={id}
-            name={id}
+            name={name}
             aria-describedby="emailHelp"
             placeholder={placeholder}
             value={value}
-            ref={register({
-              required: { required },
-              pattern: {
-                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,}$/,
-                message: { invalidMessage },
-              },
-            })}
+            onChange={props.handleUserInfoChange}
           />
-          {errors.id && errors.id.message}
+          {error && errorMessage}
           <small id="emailHelp" className="form-text text-muted">
             Zostaną na niego wysłane dalsze szczegóły zamówienia.
           </small>
         </div>
       </div>
     );
-  } else if (type === "text" && id == "number") {
+  } else if (type === "tel") {
     field = (
       <div className="form-group row">
         <label htmlFor={id} className="col-sm-2 col-form-label">
-          {text}
+          {labelText}
         </label>
         <div className="col-sm-5">
           <input
             type={type}
             className="form-control"
             id={id}
-            name={id}
+            name={name}
             aria-describedby="Help"
             placeholder={placeholder}
             value={value}
-            ref={register({
-              required: { required },
-              pattern: {
-                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,}$/,
-                message: { invalidMessage },
-              },
-            })}
+            onChange={props.handleUserInfoChange}
           />
-          {errors.id && errors.id.message}
+          {error && errorMessage}
         </div>
       </div>
     );
@@ -99,16 +84,30 @@ const FormField = (props) => {
             type={type}
             className="form-control"
             id={id}
-            name={id}
+            name={name}
             aria-describedby="Help"
             placeholder={placeholder}
             value={value}
-            ref={register({
-              required: { required },
-            })}
+            onChange={props.handleUserInfoChange}
           />
-          {errors.id && errors.id.message}
+          {error && errorMessage}
         </div>
+      </div>
+    );
+  } else if (type === "checkbox") {
+    field = (
+      <div className="row">
+        <input
+          type={type}
+          id={id}
+          name={name}
+          aria-describedby="Help"
+          checked={value}
+        />
+        <label className="pl-1" htmlFor={id}>
+          {labelText}
+        </label>
+        {error && errorMessage}
       </div>
     );
   }

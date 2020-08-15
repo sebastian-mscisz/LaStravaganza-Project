@@ -1,4 +1,8 @@
 import React from "react";
+import FooterContact from "./FooterContact";
+import FooterOpenInfo from "./FooterOpenInfo";
+import FooterSocial from "./FooterSocial";
+import FooterNewsletter from "./FooterNewsletter";
 
 const Footer = () => {
   return (
@@ -6,11 +10,10 @@ const Footer = () => {
       <div className="bg-tertiary">
         <div className="container">
           <div className="row">
-            <div className="col-md-4">infoinfo infoinfoinfo</div>
-            <div className="col-md-4">infoinfo infoinfoinfo</div>
-            <div className="col-md-4">
-              newsletternewsletter newsletternewsletternewsletter
-            </div>
+            <FooterContact />
+            <FooterSocial />
+            <FooterOpenInfo />
+            <FooterNewsletter />
           </div>
         </div>
       </div>

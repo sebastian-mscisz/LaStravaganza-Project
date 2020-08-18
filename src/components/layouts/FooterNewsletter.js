@@ -3,10 +3,8 @@ import React from "react";
 const FooterNewsletter = () => {
   return (
     <div className="col-md-3">
-      <h3>Zapisz się do newsletter'a!</h3>
-      <p>
-        +Nie ominiesz żadnych promocji! +Otrzymasz unikalne oferty promocyjne
-      </p>
+      <h4>Zapisz się do newsletter'a!</h4>
+      <p>+Nie ominiesz żadnych promocji! +Nie ominą cię żadne wydarzenia!</p>
       <input
         className="form-control"
         type="text"

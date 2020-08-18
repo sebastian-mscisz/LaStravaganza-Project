@@ -1,7 +1,8 @@
 import React from "react";
+import PromoContent from "../layouts/PromoContent";
 
 const PromoPage = () => {
-  return <div className="container">Promo</div>;
+  return <PromoContent />;
 };
 
 export default PromoPage;

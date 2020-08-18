@@ -1,7 +1,8 @@
 import React from "react";
+import HomeContent from "../layouts/HomeContent";
 
 const HomePage = () => {
-  return <div className="container">start</div>;
+  return <HomeContent />;
 };
 
 export default HomePage;

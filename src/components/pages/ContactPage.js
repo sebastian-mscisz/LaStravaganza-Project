@@ -1,7 +1,8 @@
 import React from "react";
+import ContactContent from "../layouts/ContactContent";
 
 const ContactPage = () => {
-  return <div className="container">contact</div>;
+  return <ContactContent />;
 };
 
 export default ContactPage;

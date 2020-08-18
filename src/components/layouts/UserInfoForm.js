@@ -1,5 +1,6 @@
 import React from "react";
 import FormField from "./FormField";
+import NumberFormat from "react-number-format";
 
 const UserInfoForm = (props) => {
   const { errors, messages } = props;

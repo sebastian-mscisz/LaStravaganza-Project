@@ -1,7 +1,8 @@
 import React from "react";
+import AboutContent from "../layouts/AboutContent";
 
 const AboutPage = () => {
-  return <div className="container"> o nas</div>;
+  return <AboutContent />;
 };
 
 export default AboutPage;

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import RemoveFromCartButton from "../layouts/RemoveFromCartButton";
 import UserInfoForm from "../layouts/UserInfoForm";
+import OrderLoadingScreen from "../layouts/OrderLoadingScreen";
 
 class BasketPage extends Component {
   state = {
@@ -31,6 +32,7 @@ class BasketPage extends Component {
       termsAccept: false,
       accept: false,
     },
+    loadingScreen: null,
   };
   errorMessages = {
     requiredMessage: <p className="text-primary">To pole jest wymagane.</p>,
@@ -50,34 +52,40 @@ class BasketPage extends Component {
   };
   handleSubmit = (e) => {
     e.preventDefault();
+
+    this.orderLoadingScreen("show");
     const validation = this.formValidation();
     if (validation.correct) {
-      this.setState({
-        userInfo: {
-          name: "",
-          city: "",
-          address: "",
-          nrAddress: "",
-          number: "",
-          email: "",
-          comments: "",
-          paymentMethod: "",
-          deliveryMethod: "",
-          termsAccept: false,
-          newsletterAccept: false,
-          accept: false,
-        },
-        errors: {
-          name: false,
-          address: false,
-          nrAddress: false,
-          email: false,
-          number: false,
-          paymentMethod: false,
-          deliveryMethod: false,
-          termsAccept: false,
-        },
-      });
+      this.orderLoadingScreen("show");
+      setTimeout(() => {
+        this.orderLoadingScreen();
+        this.setState({
+          userInfo: {
+            name: "",
+            city: "",
+            address: "",
+            nrAddress: "",
+            number: "",
+            email: "",
+            comments: "",
+            paymentMethod: "",
+            deliveryMethod: "",
+            termsAccept: false,
+            newsletterAccept: false,
+            accept: false,
+          },
+          errors: {
+            name: false,
+            address: false,
+            nrAddress: false,
+            email: false,
+            number: false,
+            paymentMethod: false,
+            deliveryMethod: false,
+            termsAccept: false,
+          },
+        });
+      }, 6000);
     } else {
       this.setState({
         errors: {
@@ -130,11 +138,11 @@ class BasketPage extends Component {
       email = true;
     }
 
-    if (/^\d{9}$/i.test(this.state.userInfo.number)) {
-      number = true;
-    }
     if (this.state.userInfo.number.length != 0) {
-      if (/^\d{9}$/i.test(this.state.userInfo.number)) {
+      if (
+        /^[0-9\s]*$/i.test(this.state.userInfo.number) &&
+        this.state.userInfo.number.replace(/ /g, "").length === 9
+      ) {
         number = true;
       }
       this.errorMessages.numberMessage = "Niepoprawny numer telefonu.";
@@ -205,10 +213,30 @@ class BasketPage extends Component {
     }
   };
 
+  orderLoadingScreen = (condition) => {
+    if (condition === "show" && this.state.loadingScreen === null) {
+      this.setState({
+        loadingScreen: <OrderLoadingScreen type="spin" />,
+      });
+      setTimeout(() => {
+        this.setState({
+          loadingScreen: <OrderLoadingScreen type="confirm" />,
+        });
+      }, 3000);
+    } else
+      this.setState({
+        loadingScreen: null,
+      });
+  };
+  orderConfirmationScreen = () => {
+    return;
+  };
+
   render() {
     return (
       <div className="container">
         {this.content()}
+        {this.state.loadingScreen}
         {
           <UserInfoForm
             userInfo={this.state.userInfo}

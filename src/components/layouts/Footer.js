@@ -6,15 +6,13 @@ import FooterNewsletter from "./FooterNewsletter";
 
 const Footer = () => {
   return (
-    <footer>
-      <div className="bg-tertiary">
-        <div className="container">
-          <div className="row">
-            <FooterContact />
-            <FooterSocial />
-            <FooterOpenInfo />
-            <FooterNewsletter />
-          </div>
+    <footer className="bg-tertiary mt-5 pt-3 text-center text-md-left">
+      <div className="container">
+        <div className="row">
+          <FooterContact />
+          <FooterSocial />
+          <FooterOpenInfo />
+          <FooterNewsletter />
         </div>
       </div>
     </footer>

@@ -13,7 +13,7 @@ class MenuPage extends Component {
   }
   render() {
     return (
-      <div className="container bg-secondary">
+      <div className="container">
         <ItemList
           list={this.state.itemList}
           handleAddItem={this.props.handleAddItem}

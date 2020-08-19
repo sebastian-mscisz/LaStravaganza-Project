@@ -35,25 +35,16 @@ class BasketPage extends Component {
     loadingScreen: null,
   };
   errorMessages = {
-    requiredMessage: <p className="text-primary">To pole jest wymagane.</p>,
-    emailMessage: <p className="text-primary">Niepoprawny adres email.</p>,
-    numberMessage: <p className="text-primary">Numer musi mieć 9 cyfr.</p>,
-    deliveryMessage: (
-      <p className="text-primary">Prosimy wybrać opcję dostawy.</p>
-    ),
-    paymentMessage: (
-      <p className="text-primary">Prosimy wybrać formę płatności.</p>
-    ),
-    termsMessage: (
-      <span className="text-primary pl-1">
-        Prosimy wyrazić zgodę na przetwarzanie danych.
-      </span>
-    ),
+    requiredMessage: <p>To pole jest wymagane.</p>,
+    emailMessage: <p>Niepoprawny adres email.</p>,
+    numberMessage: <p>Numer musi mieć 9 cyfr.</p>,
+    deliveryMessage: <p>Prosimy wybrać opcję dostawy.</p>,
+    paymentMessage: <p>Prosimy wybrać formę płatności.</p>,
+    termsMessage: <span>Prosimy wyrazić zgodę na przetwarzanie danych.</span>,
   };
   handleSubmit = (e) => {
     e.preventDefault();
 
-    this.orderLoadingScreen("show");
     const validation = this.formValidation();
     if (validation.correct) {
       this.orderLoadingScreen("show");

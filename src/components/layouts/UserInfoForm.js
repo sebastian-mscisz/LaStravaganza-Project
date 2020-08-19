@@ -1,11 +1,10 @@
 import React from "react";
 import FormField from "./FormField";
-import NumberFormat from "react-number-format";
 
 const UserInfoForm = (props) => {
   const { errors, messages } = props;
   return (
-    <form onSubmit={props.handleSubmit} className="pb-3 pt-3">
+    <form onSubmit={props.handleSubmit} className="basketForm pb-3 pt-3">
       <div className="form-group" onChange={props.handleUserInfoChange}>
         <label>Sposób dostawy:</label>
         <FormField

@@ -1,3 +1,25 @@
+p {
+  color: #dfd8c7;
+}
 a {
-  color: black;
+  color: #dfd8c7;
+}
+
+li {
+  color: #dfd8c7;
+}
+
+form {
+  color: #dfd8c7;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: $secondary;
+}
+.svgLogo {
+  fill: red;
+  color: red;
 }

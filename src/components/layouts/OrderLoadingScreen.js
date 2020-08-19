@@ -10,7 +10,7 @@ const OrderLoadingScreen = (props) => {
   } else if (props.type === "confirm") {
     windowContent = "Potwierdzono zamówienie";
   }
-  return <div className="loadingWindow">{windowContent}</div>;
+  return <div className="loadingWindow bg-secondary">{windowContent}</div>;
 };
 
 export default OrderLoadingScreen;

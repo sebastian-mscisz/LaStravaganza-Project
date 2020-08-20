@@ -1,0 +1,43 @@
+.buyBtn {
+  position: relative;
+  border-radius: 7px 7px;
+  & .btnIcon {
+    visibility: hidden;
+    display: none;
+  }
+  &:hover {
+    background: $tertiary;
+  }
+  & span {
+    transition: 0.6s;
+    transition-delay: 0.2s;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    width: 85%;
+    text-align: center;
+    opacity: 0;
+    transition: 0.4s, opacity 0.6s;
+  }
+
+  /* :before */
+  &:before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f07a";
+    font-weight: 900;
+    transform: translate(-150%, 0);
+  }
+  /* Span on :hover and :active */
+  &:hover span {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  /* :before pseudo-element on :hover 
+      and :after pseudo-element on :active */
+  &:hover:before {
+    opacity: 1;
+    transform: translate(0, 0);
+    transition-delay: 0.4s;
+  }
+}

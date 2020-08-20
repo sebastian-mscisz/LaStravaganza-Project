@@ -14,8 +14,8 @@ const ItemList = (props) => {
   return (
     <>
       <div className="navbar-nav">
-        <h1 className="h1 text-center">Menu</h1>
-        <ul>{items}</ul>
+        <h1 className="text-center">Menu</h1>
+        <ul className="list-group list-group-flush">{items}</ul>
       </div>
     </>
   );

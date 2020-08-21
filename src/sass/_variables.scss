@@ -5,8 +5,19 @@ $border-radius-sm: 0;
 $primary: #000000;
 $secondary: #b06f2c;
 $tertiary: #191919;
+$quatro: #ffffffbd;
+$transparent: transparent;
 $theme-colors: (
   "primary": $primary,
   "secondary": $secondary,
   "tertiary": $tertiary,
+  "transparent": $transparent,
 );
+#root {
+  background: rgb(25, 25, 25);
+  background: radial-gradient(
+    circle,
+    rgba(25, 25, 25, 1) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Item from "./Item";
 
 const ItemList = (props) => {
@@ -13,10 +13,14 @@ const ItemList = (props) => {
   ));
   return (
     <>
-      <div className="navbar-nav">
-        <h1 className="text-center">Menu</h1>
+      <>
+        <div className="text-center">
+          <h1 className="d-inline-block border-bottom border-secondary pt-3">
+            Menu
+          </h1>
+        </div>
         <ul className="list-group list-group-flush">{items}</ul>
-      </div>
+      </>
     </>
   );
 };

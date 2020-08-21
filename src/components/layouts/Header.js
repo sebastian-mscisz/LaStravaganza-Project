@@ -1,10 +1,10 @@
 import React from "react";
 import Logo from "./Logo";
-import Menu from "./Navigation";
+import Navigation from "./Navigation";
 
 const Header = () => {
   return (
-    <nav className="navbar d-flex navbar-expand-lg sticky-top navbar-light bg-tertiary pt-3 pb-3">
+    <nav className="navbar d-flex navbar-expand-lg sticky-top navbar-dark bg-primary pt-3 pb-4">
       <div className="container">
         <Logo />
         <button
@@ -22,7 +22,7 @@ const Header = () => {
           className="collapse navbar-collapse justify-content-end"
           id="navbarMenu"
         >
-          <Menu />
+          <Navigation />
         </div>
       </div>
     </nav>

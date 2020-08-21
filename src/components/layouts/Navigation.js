@@ -11,20 +11,24 @@ const menuList = [
 ];
 const Menu = () => {
   const menu = menuList.map((item) => (
-    <li key={item.name} className="nav-item">
-      <NavLink to={item.path} exact={item.exact ? item.exact : false}>
+    <NavLink
+      to={item.path}
+      exact={item.exact ? item.exact : false}
+      activeClassName="active"
+    >
+      <li key={item.name} className="nav-item mr-3">
         {item.name == "Koszyk" ? (
-          <span>
-            {item.name}
+          <span className="menuItem">
+            {item.name}&nbsp;
             <span className="fas fa-shopping-cart"></span>
           </span>
         ) : (
-          item.name
+          <span className="menuItem">{item.name}</span>
         )}
-      </NavLink>
-    </li>
+      </li>
+    </NavLink>
   ));
-  return <ul className="navbar-nav navbar-right">{menu}</ul>;
+  return <ul className="navbar-nav">{menu}</ul>;
 };
 
 export default Menu;

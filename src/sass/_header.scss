@@ -1,8 +1,50 @@
 nav {
   border-bottom: 2px solid $secondary;
+  background: rgb(25, 25, 25);
+  background: linear-gradient(
+    0deg,
+    rgba(25, 25, 25, 1) 0%,
+    rgba(0, 0, 0, 1) 30%
+  );
   .navbar-brand {
     width: 120px;
     padding: 0;
     margin: 0;
+  }
+  li {
+    font-size: 1.6em;
+    font-family: "Dancing Script", Times, serif;
+    font-weight: 300;
+    color: $quatro;
+  }
+  .active {
+    li {
+      color: white;
+      .menuItem {
+        border-bottom: 1px solid $secondary;
+      }
+    }
+  }
+  a {
+    .menuItem {
+      border-bottom: 0px solid $primary;
+      transition: 1s;
+    }
+  }
+  a:hover {
+    text-decoration: none;
+    .menuItem {
+      border-bottom: 1px solid $secondary;
+      transition: 1s;
+    }
+  }
+  li:hover {
+    color: white;
+  }
+  @include for-size(phone) {
+    li {
+      padding-top: 7px;
+      text-align: center;
+    }
   }
 }

@@ -3,7 +3,10 @@ import AddToCartButton from "./AddToCartButton";
 
 const Item = (props) => {
   return (
-    <li className="list-group-item bg-primary border-secondary" key={props.id}>
+    <li
+      className="list-group-item bg-transparent border-secondary"
+      key={props.id}
+    >
       <div className="row">
         <div className="col-9 m-auto">
           <h4>

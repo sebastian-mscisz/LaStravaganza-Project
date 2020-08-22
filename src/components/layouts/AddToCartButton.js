@@ -13,7 +13,6 @@ const AddToCartButton = (props) => {
       data-hover='<span className="fas fa-shopping-cart"></span>'
       onClick={() => props.handleAddItem(item)}
     >
-      <span class="btnIcon fas fa-shopping-cart"></span>
       <span>
         <strong>Dodaj do koszyka</strong>
       </span>

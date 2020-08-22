@@ -31,10 +31,10 @@ const FormField = (props) => {
   } else if (type === "text" && id == "inputEmail") {
     field = (
       <div className="form-group row">
-        <label htmlFor={id} className="col-sm-2 col-form-label">
+        <label htmlFor={id} className="col-sm-3 col-form-label">
           {labelText}
         </label>
-        <div className="col-sm-5">
+        <div className="col-sm-9 m-auto">
           <input
             type={type}
             className="form-control"
@@ -55,10 +55,10 @@ const FormField = (props) => {
   } else if (type === "tel") {
     field = (
       <div className="form-group row">
-        <label htmlFor={id} className="col-sm-2 col-form-label">
+        <label htmlFor={id} className="col-sm-3 col-form-label">
           {labelText}
         </label>
-        <div className="col-sm-5">
+        <div className="col-sm-9 m-auto">
           <input
             type={type}
             className="form-control"
@@ -76,10 +76,10 @@ const FormField = (props) => {
   } else if (type === "text") {
     field = (
       <div className="form-group row">
-        <label htmlFor={id} className="col-sm-2 col-form-label">
+        <label htmlFor={id} className="col-sm-3 col-form-label">
           {labelText}
         </label>
-        <div className="col-sm-5">
+        <div className="col-sm-9 m-auto">
           <input
             type={type}
             className="form-control"
@@ -96,15 +96,16 @@ const FormField = (props) => {
     );
   } else if (type === "checkbox") {
     field = (
-      <div className="row">
+      <div className="row pl-3">
         <input
+          className="mt-auto mb-auto"
           type={type}
           id={id}
           name={name}
           aria-describedby="Help"
           checked={value}
         />
-        <label className="pl-1" htmlFor={id}>
+        <label className="mt-auto mb-auto pl-2" htmlFor={id}>
           {labelText}
         </label>
         {error && errorMessage}

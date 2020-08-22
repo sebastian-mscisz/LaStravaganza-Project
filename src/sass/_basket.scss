@@ -1,0 +1,37 @@
+.basketForm {
+  p {
+    color: $danger;
+  }
+  span {
+    color: $danger;
+    padding-left: 6px;
+  }
+  label {
+    color: $secondary;
+    font-size: 1.1em;
+    font-weight: 600;
+  }
+  .form-check-label {
+    color: white;
+    font-size: 1em;
+    font-weight: 400;
+  }
+}
+.emptyCart {
+  color: $quatro;
+  font-size: 1.2em;
+  padding-top: 50px;
+  padding-bottom: 25px;
+}
+.basketOrder {
+  color: $secondary;
+  font-family: "Dancing Script", Times, serif;
+  font-size: 1.6em;
+  font-weight: 900;
+}
+.orderSummary {
+  @include for-size(laptop) {
+    border-bottom: 2px solid $secondary;
+    border-left: 2px solid $secondary;
+  }
+}

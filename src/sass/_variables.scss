@@ -13,7 +13,7 @@ $theme-colors: (
   "tertiary": $tertiary,
   "transparent": $transparent,
 );
-#root {
+body {
   background: rgb(25, 25, 25);
   background: radial-gradient(
     circle,

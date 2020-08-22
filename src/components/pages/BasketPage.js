@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import RemoveFromCartButton from "../layouts/RemoveFromCartButton";
 import UserInfoForm from "../layouts/UserInfoForm";
 import OrderLoadingScreen from "../layouts/OrderLoadingScreen";
+import MenuButton from "../layouts/MenuButton";
 
 class BasketPage extends Component {
   state = {
@@ -35,12 +36,36 @@ class BasketPage extends Component {
     loadingScreen: null,
   };
   errorMessages = {
-    requiredMessage: <p>To pole jest wymagane.</p>,
-    emailMessage: <p>Niepoprawny adres email.</p>,
-    numberMessage: <p>Numer musi mieć 9 cyfr.</p>,
-    deliveryMessage: <p>Prosimy wybrać opcję dostawy.</p>,
-    paymentMessage: <p>Prosimy wybrać formę płatności.</p>,
-    termsMessage: <span>Prosimy wyrazić zgodę na przetwarzanie danych.</span>,
+    requiredMessage: (
+      <p>
+        <em>To pole jest wymagane.</em>
+      </p>
+    ),
+    emailMessage: (
+      <p>
+        <em>Niepoprawny adres email.</em>
+      </p>
+    ),
+    numberMessage: (
+      <p>
+        <em>Numer musi mieć 9 cyfr.</em>
+      </p>
+    ),
+    deliveryMessage: (
+      <p>
+        <em>Prosimy wybrać opcję dostawy.</em>
+      </p>
+    ),
+    paymentMessage: (
+      <p>
+        <em>Prosimy wybrać formę płatności.</em>
+      </p>
+    ),
+    termsMessage: (
+      <span>
+        <em>Prosimy wyrazić zgodę na przetwarzanie danych.</em>
+      </span>
+    ),
   };
   handleSubmit = (e) => {
     e.preventDefault();
@@ -183,24 +208,55 @@ class BasketPage extends Component {
   };
   orderList = () =>
     this.props.orderList.map((item) => (
-      <p>
-        {item.name} - {item.price} - {item.ingredients} -{" "}
-        <RemoveFromCartButton
-          handleRemoveItem={this.props.handleRemoveItem}
-          itemId={item.id}
-        />
-      </p>
+      <>
+        <div className="row">
+          <div className="col-9 m-auto">
+            <p className="basketOrder">
+              {item.id}. {item.name}
+            </p>
+          </div>
+          <div className="col-3 text-right m-auto">
+            <p className="text-secondary m-auto">
+              <strong>{item.price}</strong>
+            </p>
+          </div>
+        </div>
+        <div className="row border-bottom border-secondary mb-3">
+          <div className="col">
+            <p className="m-auto pt-3 pb-3">
+              <em>{item.ingredients}</em>
+            </p>
+          </div>
+          <div className="pb-3 pt-3 col text-right">
+            <RemoveFromCartButton
+              handleRemoveItem={this.props.handleRemoveItem}
+              itemId={item.id}
+            />
+          </div>
+        </div>
+      </>
     ));
 
   content = () => {
     if (this.orderList().length != 0) {
       return (
         <>
-          <p>Twoje zamówienie: </p> {this.orderList()}
+          <h1 className="pt-3 pb-3 text-center">Twoje zamówienie:</h1>
+          {this.orderList()}
         </>
       );
     } else {
-      return <p>Twój koszyk jest pusty ! :(</p>;
+      return (
+        <>
+          <p className="text-center emptyCart">
+            Twój <span className="btnIcon fas fa-shopping-cart"></span> jest
+            pusty ! <span className="far fa-frown"></span>
+          </p>
+          <p className="text-center">
+            <MenuButton />
+          </p>
+        </>
+      );
     }
   };
 
@@ -219,24 +275,50 @@ class BasketPage extends Component {
         loadingScreen: null,
       });
   };
-  orderConfirmationScreen = () => {
-    return;
+  summaryCost = () => {
+    let totalCost = 0;
+    let deliveryCost = 0;
+    let orderCost = 0;
+    this.props.orderList.forEach((item) => {
+      orderCost += parseInt(item.price);
+    });
+    if (this.state.userInfo.deliveryMethod === "delivery") {
+      deliveryCost = 5;
+    }
+    totalCost = orderCost + deliveryCost;
+    return (
+      <div className="col-md-3">
+        <div className="orderSummary pl-3 pb-1">
+          <h4 className="text-center">Podsumowanie</h4>
+          <p>Jedzenie: {orderCost} zł</p>
+          <p>Dostawa: +{deliveryCost} zł</p>
+          <p>
+            <span className="border-bottom border-secondary">
+              Razem: <strong>{totalCost} zł</strong>
+            </span>
+          </p>
+        </div>
+      </div>
+    );
   };
 
   render() {
     return (
-      <div className="container">
+      <div className="container flex-grow-1">
         {this.content()}
         {this.state.loadingScreen}
-        {
-          <UserInfoForm
-            userInfo={this.state.userInfo}
-            errors={this.state.errors}
-            messages={this.errorMessages}
-            handleSubmit={this.handleSubmit}
-            handleUserInfoChange={this.handleUserInfoChange}
-          />
-        }
+        {this.orderList().length != 0 ? (
+          <div className="row flex-md-row-reverse">
+            {this.summaryCost()}
+            <UserInfoForm
+              userInfo={this.state.userInfo}
+              errors={this.state.errors}
+              messages={this.errorMessages}
+              handleSubmit={this.handleSubmit}
+              handleUserInfoChange={this.handleUserInfoChange}
+            />
+          </div>
+        ) : null}
       </div>
     );
   }

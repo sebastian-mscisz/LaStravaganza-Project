@@ -2,7 +2,7 @@ import React from "react";
 
 const ContactContent = () => {
   return (
-    <div className="container">
+    <div className="container flex-grow-1">
       <div className="text-center">
         <h1>Kontakt</h1>
       </div>

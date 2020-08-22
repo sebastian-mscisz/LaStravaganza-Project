@@ -4,7 +4,10 @@ import FormField from "./FormField";
 const UserInfoForm = (props) => {
   const { errors, messages } = props;
   return (
-    <form onSubmit={props.handleSubmit} className="basketForm pb-3 pt-3">
+    <form
+      onSubmit={props.handleSubmit}
+      className="col-md-9 basketForm pb-3 pt-3"
+    >
       <div className="form-group" onChange={props.handleUserInfoChange}>
         <label>Sposób dostawy:</label>
         <FormField
@@ -62,7 +65,7 @@ const UserInfoForm = (props) => {
         name="nrAddress"
         placeholder="Podaj numer domu/mieszkania..."
         value={props.userInfo.nrAddress}
-        labelText="Nr domu/mieszkania:"
+        labelText="Nr domu lub mieszkania:"
         handleUserInfoChange={props.handleUserInfoChange}
         error={errors.name}
         errorMessage={messages.requiredMessage}
@@ -148,8 +151,8 @@ const UserInfoForm = (props) => {
           labelText="Random coś tam na newsletter"
         />
       </div>
-      <button type="submit" className="btn btn-primary">
-        Submit
+      <button type="submit" className="btn btn-outline-secondary">
+        <strong>Złóż zamówienie!</strong>
       </button>
     </form>
   );

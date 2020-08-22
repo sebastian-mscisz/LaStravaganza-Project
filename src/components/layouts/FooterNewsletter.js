@@ -16,7 +16,9 @@ const FooterNewsletter = () => {
         placeholder="Podaj adres email..."
       ></input>
       <br />
-      <button className="btn">Wyślij!</button>
+      <button className="btn btn-outline-secondary">
+        <strong>Wyślij!</strong>
+      </button>
     </div>
   );
 };

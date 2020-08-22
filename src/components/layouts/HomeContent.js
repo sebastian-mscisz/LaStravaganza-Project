@@ -2,7 +2,7 @@ import React from "react";
 
 const HomeContent = () => {
   return (
-    <div className="container">
+    <div className="container flex-grow-1">
       <div className="text-center">
         <h1>Pizzeria La Stravaganza</h1>
       </div>

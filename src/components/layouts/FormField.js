@@ -98,14 +98,14 @@ const FormField = (props) => {
     field = (
       <div className="row pl-3">
         <input
-          className="mt-auto mb-auto"
+          className="col-auto mt-1"
           type={type}
           id={id}
           name={name}
           aria-describedby="Help"
           checked={value}
         />
-        <label className="mt-auto mb-auto pl-2" htmlFor={id}>
+        <label className="col pl-2" htmlFor={id}>
           {labelText}
         </label>
         {error && errorMessage}

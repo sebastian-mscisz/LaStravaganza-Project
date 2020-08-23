@@ -40,3 +40,16 @@
     transition-delay: 0.4s;
   }
 }
+#addToast {
+  position: fixed;
+  z-index: 2;
+  right: 0;
+  border: 1px solid $secondary;
+  .toast-header {
+    background-color: $tertiary;
+    border: none;
+  }
+  @include for-size(phone) {
+    bottom: 0;
+  }
+}

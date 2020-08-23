@@ -69,7 +69,6 @@ class BasketPage extends Component {
   };
   handleSubmit = (e) => {
     e.preventDefault();
-
     const validation = this.formValidation();
     if (validation.correct) {
       this.orderLoadingScreen("show");

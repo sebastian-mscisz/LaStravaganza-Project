@@ -14,6 +14,16 @@ const ItemList = (props) => {
   return (
     <>
       <>
+        <div className="toast" id="addToast">
+          <div class="toast-header">
+            <strong class="mr-auto">
+              <span class="fas fa-check"></span> Dodano do koszyka!
+            </strong>
+            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        </div>
         <div className="text-center">
           <h1 className="d-inline-block border-bottom border-secondary pt-3">
             Menu

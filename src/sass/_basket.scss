@@ -8,12 +8,9 @@
   }
   label {
     color: $secondary;
-    font-size: 1.1em;
-    font-weight: 600;
   }
   .form-check-label {
     color: white;
-    font-size: 1em;
     font-weight: 400;
   }
 }
@@ -33,5 +30,37 @@
   @include for-size(laptop) {
     border-bottom: 2px solid $secondary;
     border-left: 2px solid $secondary;
+    border-radius: 25%;
+  }
+}
+.loadingWindow {
+  background: rgb(25, 25, 25);
+  background: radial-gradient(
+    circle,
+    rgba(25, 25, 25, 1) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  position: fixed;
+  border: 2px solid $secondary;
+  z-index: 1;
+  text-align: center;
+  @include for-size(phone) {
+    width: 75%;
+    height: 75%;
+    left: 15%;
+    top: 15%;
+  }
+  @include for-size(desktop) {
+    width: 50%;
+    height: 70%;
+    left: 25%;
+    top: 15%;
+  }
+  p {
+    font-size: 1.7em;
+    color: $quatro;
+  }
+  .fa-check {
+    font-size: 2em;
   }
 }

@@ -139,7 +139,7 @@ const UserInfoForm = (props) => {
           type="checkbox"
           name="termsAccept"
           value={props.userInfo.termsAccept}
-          labelText="Random zgoda na przetwarzanie lorem ipsum"
+          labelText="Wyrażasz zgodę na przetwarzanie twoich danych osobowych oraz zakup zawartości koszyka oraz potwierdzasz, że znana ci jest nasza polityka prywatności oraz regulamin."
           error={errors.termsAccept}
           errorMessage={messages.termsMessage}
         />
@@ -148,7 +148,7 @@ const UserInfoForm = (props) => {
           type="checkbox"
           name="newsletterAccept"
           value={props.userInfo.newsletterAccept}
-          labelText="Random coś tam na newsletter"
+          labelText="Zaznacz, aby zapisać się do newslettera i otrzymywać najświeższe informacje oraz promocje!"
         />
       </div>
       <button type="submit" className="btn btn-outline-secondary">

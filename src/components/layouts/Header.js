@@ -8,7 +8,7 @@ const Header = () => {
       <div className="container">
         <Logo />
         <button
-          className="navbar-toggler"
+          className="navbar-toggler border-secondary"
           type="button"
           data-toggle="collapse"
           data-target="#navbarMenu"

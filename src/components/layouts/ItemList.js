@@ -1,5 +1,6 @@
 import React from "react";
 import Item from "./Item";
+import { CSSTransition } from "react-transition-group";
 
 const ItemList = (props) => {
   const items = props.list.map((item) => (
@@ -24,12 +25,30 @@ const ItemList = (props) => {
             </button>
           </div>
         </div>
-        <div className="text-center">
-          <h1 className="d-inline-block border-bottom border-secondary pt-3">
-            Menu
-          </h1>
-        </div>
-        <ul className="list-group list-group-flush">{items}</ul>
+        <CSSTransition
+          in={true}
+          appear={true}
+          classNames={{
+            appear: "appearContentCenter",
+            enterDone: "enterContentCenterDone",
+          }}
+        >
+          <div className="text-center">
+            <h1 className="d-inline-block border-bottom border-secondary pt-3">
+              Menu
+            </h1>
+          </div>
+        </CSSTransition>
+        <CSSTransition
+          in={true}
+          appear={true}
+          classNames={{
+            appear: "appearContentCenter",
+            enterDone: "enterContentCenterDone",
+          }}
+        >
+          <ul className="list-group list-group-flush">{items}</ul>
+        </CSSTransition>
       </>
     </>
   );

@@ -3,6 +3,7 @@ import RemoveFromCartButton from "../layouts/RemoveFromCartButton";
 import UserInfoForm from "../layouts/UserInfoForm";
 import OrderLoadingScreen from "../layouts/OrderLoadingScreen";
 import MenuButton from "../layouts/MenuButton";
+import { CSSTransition } from "react-transition-group";
 
 class BasketPage extends Component {
   state = {
@@ -240,20 +241,60 @@ class BasketPage extends Component {
     if (this.orderList().length != 0) {
       return (
         <>
-          <h1 className="pt-3 pb-3 text-center">Twoje zamówienie:</h1>
-          {this.orderList()}
+          <CSSTransition
+            in={true}
+            appear={true}
+            classNames={{
+              appear: "appearContentCenter",
+              appearDone: "appearContentCenterDone",
+              enterDone: "enterContentCenterDone",
+            }}
+          >
+            <h1 className="pt-3 pb-3 text-center">Twoje zamówienie:</h1>
+          </CSSTransition>
+          <CSSTransition
+            in={true}
+            appear={true}
+            classNames={{
+              appear: "appearContentCenter",
+              appearDone: "appearContentCenterDone",
+              enterDone: "enterContentCenterDone",
+            }}
+          >
+            <div>{this.orderList()}</div>
+          </CSSTransition>
         </>
       );
     } else {
       return (
         <>
-          <p className="text-center emptyCart">
-            Twój <span className="btnIcon fas fa-shopping-cart"></span> jest
-            pusty ! <span className="far fa-frown"></span>
-          </p>
-          <p className="text-center">
-            <MenuButton />
-          </p>
+          <CSSTransition
+            in={true}
+            appear={true}
+            classNames={{
+              appear: "appearContentCenter",
+              appearDone: "appearContentCenterDone",
+              enterDone: "enterContentCenterDone",
+            }}
+          >
+            <p className="text-center emptyCart">
+              Twój <span className="btnIcon fas fa-shopping-cart"></span> jest
+              pusty ! <span className="far fa-frown"></span>
+            </p>
+          </CSSTransition>
+          <CSSTransition
+            in={true}
+            appear={true}
+            classNames={{
+              appear: "appearContentCenter",
+              appearDone: "appearContentCenterDone",
+              enterDone: "enterContentCenterDone",
+            }}
+          >
+            <p className="text-center">
+              <MenuButton />
+            </p>
+          </CSSTransition>
         </>
       );
     }
@@ -307,16 +348,26 @@ class BasketPage extends Component {
         {this.content()}
         {this.state.loadingScreen}
         {this.orderList().length != 0 ? (
-          <div className="row flex-md-row-reverse">
-            {this.summaryCost()}
-            <UserInfoForm
-              userInfo={this.state.userInfo}
-              errors={this.state.errors}
-              messages={this.errorMessages}
-              handleSubmit={this.handleSubmit}
-              handleUserInfoChange={this.handleUserInfoChange}
-            />
-          </div>
+          <CSSTransition
+            in={true}
+            appear={true}
+            classNames={{
+              appear: "appearContentCenter",
+              appearDone: "appearContentCenterDone",
+              enterDone: "enterContentCenterDone",
+            }}
+          >
+            <div className="row flex-md-row-reverse">
+              {this.summaryCost()}
+              <UserInfoForm
+                userInfo={this.state.userInfo}
+                errors={this.state.errors}
+                messages={this.errorMessages}
+                handleSubmit={this.handleSubmit}
+                handleUserInfoChange={this.handleUserInfoChange}
+              />
+            </div>
+          </CSSTransition>
         ) : null}
       </div>
     );

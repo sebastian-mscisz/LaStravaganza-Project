@@ -1,0 +1,28 @@
+.appearContentLeft {
+  opacity: 0;
+  transform: translateX(-75vw);
+}
+
+.enterContentLeftDone {
+  opacity: 1;
+  transition: all 500ms linear;
+  color: $quatro;
+}
+.appearContentRight {
+  opacity: 0;
+  transform: translateX(75vw);
+}
+
+.enterContentRightDone {
+  opacity: 1;
+  transition: all 500ms linear;
+  color: $quatro;
+}
+.appearContentCenter {
+  opacity: 0;
+}
+.enterContentCenterDone {
+  opacity: 1;
+  transition: all 500ms linear;
+  color: $quatro;
+}

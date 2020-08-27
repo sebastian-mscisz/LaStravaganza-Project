@@ -35,7 +35,13 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|svg|eot|woff|woff2|ttf)$/,
-        use: ["file-loader"],
+        use: {
+          loader: "file-loader",
+          options: {
+            name: "[name]-[contentHash:6].[ext]",
+            outputPath: "assets/images",
+          },
+        },
       },
     ],
   },
@@ -44,10 +50,10 @@ module.exports = {
     historyApiFallback: true,
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: "css/[name]-[contentHash:6].css",
     }),
-    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       filename: "index.html",
       template: "src/templates/index.html",

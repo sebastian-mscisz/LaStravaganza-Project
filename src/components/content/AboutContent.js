@@ -54,12 +54,11 @@ const AboutContent = () => {
           }}
         >
           <div className="col-md-6 p-2 mt-auto mb-auto">
-            <h2>Nasza Pizzeria działa od końca 2014 roku</h2>
+            <h2>Nasza Pizzeria działa od początku 2020 roku</h2>
             <p className="text-justify">
-              W menu jest tylko pizza, kilka sałatek, zupa i deser. Sercem jest
-              ceglany piec opalany drewnem. Nie serwujemy sosu czosnkowego!!!
-              Wyłącznie włoską oliwę. Menu składa się z pozycji stałych oraz
-              sezonowych. Jest sporo propozycji wegetariańskich.
+              Jesteśmy nowo otwartą pizzerią w środku Wrocławia. Mamy za cel
+              dostarczyć najlepszą pizza rodem prosto z Włoch w atmosferze
+              ekstrawagancji i elegancji.
             </p>
           </div>
         </CSSTransition>
@@ -151,11 +150,10 @@ const AboutContent = () => {
           <div className="col-md-6 p-2 mt-auto mb-auto">
             <h2>Doceniacie nas - Dziękujemy</h2>
             <p className="text-justify">
-              Pizzeria każdego roku swojej działalności otrzymuje certyfikat
-              jakości Tripadvisor, liczne nagrody i wyróżnienia. Goście zaczęli
-              dopytywać o więcej….a my wiedzieliśmy, że więcej nie może odebrać
-              jakości Pizzerii. Że więcej, to druga restauracja… również
-              stawiająca na specjalizację.
+              Od czasu otwarcia otrzymujemy od was liczne pochwały, 5-cio
+              gwiazdowe opinie na Facebook'u oraz Google'u co niezmiernie nas
+              cieszy :) W ramach podziękowania za położone w nas zaufanie i
+              wiarę niedługo odwięczymy się niespodzianką.
             </p>
           </div>
         </CSSTransition>

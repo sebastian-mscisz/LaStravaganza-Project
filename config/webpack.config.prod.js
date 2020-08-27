@@ -4,13 +4,15 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
+  devtool: "eval-source-map",
   mode: "production",
   entry: {
     main: "./src/components/index.js",
   },
   output: {
-    filename: "js/[name]-[contentHash:6].js",
+    filename: "[name]-[contentHash:6].js",
     path: path.resolve(__dirname, "../", "build"),
+    publicPath: "./",
   },
   module: {
     rules: [
@@ -32,22 +34,49 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
       {
-        test: /\.(svg|eot|woff|woff2|ttf)$/,
-        use: ["file-loader"],
+        test: /\.svg$/,
+        use: [
+          {
+            loader: "svg-url-loader",
+            options: {
+              limit: 10000,
+              name: "[name].[ext]",
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(png|jpg|jpeg)$/,
+        use: {
+          loader: "file-loader",
+          options: {
+            name: "[name]-[contentHash:6].[ext]",
+            outputPath: "assets/images",
+            publicPath: "build/assets/images",
+          },
+        },
+      },
+      {
+        test: /\.(eot|woff|woff2|ttf)$/,
+        use: {
+          loader: "file-loader",
+          options: {
+            name: "[name]-[contentHash:6].[ext]",
+            outputPath: "assets/fonts",
+          },
+        },
       },
     ],
   },
-  devServer: {
-    open: true,
-  },
   plugins: [
-    new MiniCssExtractPlugin({
-      filename: "css/[name]-[contentHash:6].css",
-    }),
     new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin({
+      filename: "[name]-[contentHash:6].css",
+    }),
     new HtmlWebpackPlugin({
       filename: "index.html",
       template: "src/templates/index.html",
+      favicon: "src/templates/favicon.ico",
     }),
   ],
 };

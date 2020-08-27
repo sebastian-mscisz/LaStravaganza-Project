@@ -50,10 +50,8 @@ const PromoContent = () => {
             <div className="col-md-6 p-2 mt-auto mb-auto">
               <h2>Darmowa dostawa na terenie Wrocławia</h2>
               <p className="text-justify">
-                W menu jest tylko pizza, kilka sałatek, zupa i deser. Sercem
-                jest ceglany piec opalany drewnem. Nie serwujemy sosu
-                czosnkowego!!! Wyłącznie włoską oliwę. Menu składa się z pozycji
-                stałych oraz sezonowych. Jest sporo propozycji wegetariańskich.
+                Z racji rozpoczęcia działalności we Wrocławiu, oferujemy darmową
+                dostawę do każdej dzielnicy we Wrocławiu.
               </p>
             </div>
           )}
@@ -86,11 +84,11 @@ const PromoContent = () => {
         >
           <div className="col-md-6 p-2 mt-auto mb-auto">
             <h2>Karta lojalnościowa</h2>
+            <p className="text-justify">Lojalność nagradzamy :)</p>
             <p className="text-justify">
-              W menu jest tylko pizza, kilka sałatek, zupa i deser. Sercem jest
-              ceglany piec opalany drewnem. Nie serwujemy sosu czosnkowego!!!
-              Wyłącznie włoską oliwę. Menu składa się z pozycji stałych oraz
-              sezonowych. Jest sporo propozycji wegetariańskich.
+              Dlatego przy pierwszym zamówieniu otrzymasz specjalną kartę, na
+              którą możesz zbierać pieczątki pizz. Za 10 pieczątek możesz
+              odebrać darmową wybraną pizzę w naszej restauracji na miejscu :)
             </p>
           </div>
         </CSSTransition>
@@ -124,10 +122,9 @@ const PromoContent = () => {
           <div className="col-md-6 p-2 mt-auto mb-auto">
             <h2>Promocyjna pizza miesiąca</h2>
             <p className="text-justify">
-              W menu jest tylko pizza, kilka sałatek, zupa i deser. Sercem jest
-              ceglany piec opalany drewnem. Nie serwujemy sosu czosnkowego!!!
-              Wyłącznie włoską oliwę. Menu składa się z pozycji stałych oraz
-              sezonowych. Jest sporo propozycji wegetariańskich.
+              Co miesiąc będzie wybierana pizza, na którą będzie nakładany rabat
+              w wysokości 33% ceny, a na naszej grupie na facebooku to WY
+              będziecie mogli zdecydować, która pizza go otrzyma :)
             </p>
           </div>
         </CSSTransition>

@@ -1,5 +1,5 @@
 import React from "react";
-import AboutContent from "../layouts/AboutContent";
+import AboutContent from "../content/AboutContent";
 
 const AboutPage = () => {
   return <AboutContent />;

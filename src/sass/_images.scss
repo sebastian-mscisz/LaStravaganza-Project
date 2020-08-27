@@ -1,0 +1,7 @@
+.promoImage {
+  @include for-size(phone) {
+    width: 100%;
+  }
+
+  height: auto;
+}

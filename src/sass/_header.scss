@@ -1,6 +1,7 @@
 nav {
   border-bottom: 2px solid $secondary;
   background: rgb(25, 25, 25);
+  z-index: 2 !important;
   background: linear-gradient(
     0deg,
     rgba(25, 25, 25, 1) 0%,

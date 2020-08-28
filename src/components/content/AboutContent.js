@@ -63,7 +63,22 @@ const AboutContent = () => {
           </div>
         </CSSTransition>
       </div>
-      <div className="row p-2">
+      <div className="row p-2 flex-md-row-reverse">
+        <CSSTransition
+          in={true}
+          appear={true}
+          classNames={{
+            appear: "appearContentRight",
+            appearDone: "appearContentRightDone",
+            enterDone: "enterContentRightDone",
+          }}
+        >
+          <img
+            className="col-md-6 p-2 promoImage"
+            src={aboutImage3}
+            alt="obrazek z prawej"
+          ></img>
+        </CSSTransition>
         <CSSTransition
           in={true}
           appear={true}
@@ -82,21 +97,6 @@ const AboutContent = () => {
               Celsjusza. Praca z żywym ogniem jest sztuką!
             </p>
           </div>
-        </CSSTransition>
-        <CSSTransition
-          in={true}
-          appear={true}
-          classNames={{
-            appear: "appearContentRight",
-            appearDone: "appearContentRightDone",
-            enterDone: "enterContentRightDone",
-          }}
-        >
-          <img
-            className="col-md-6 p-2 promoImage"
-            src={aboutImage3}
-            alt="obrazek z prawej"
-          ></img>
         </CSSTransition>
       </div>
       <div className="row p-2">
@@ -137,7 +137,22 @@ const AboutContent = () => {
           </div>
         </CSSTransition>
       </div>
-      <div className="row p-2">
+      <div className="row p-2 flex-md-row-reverse">
+        <CSSTransition
+          in={true}
+          appear={true}
+          classNames={{
+            appear: "appearContentRight",
+            appearDone: "appearContentRightDone",
+            enterDone: "enterContentRightDone",
+          }}
+        >
+          <img
+            className="col-md-6 p-2 promoImage"
+            src={aboutImage5}
+            alt="obrazek z prawej"
+          ></img>
+        </CSSTransition>
         <CSSTransition
           in={true}
           appear={true}
@@ -156,21 +171,6 @@ const AboutContent = () => {
               wiarę niedługo odwięczymy się niespodzianką.
             </p>
           </div>
-        </CSSTransition>
-        <CSSTransition
-          in={true}
-          appear={true}
-          classNames={{
-            appear: "appearContentRight",
-            appearDone: "appearContentRightDone",
-            enterDone: "enterContentRightDone",
-          }}
-        >
-          <img
-            className="col-md-6 p-2 promoImage"
-            src={aboutImage5}
-            alt="obrazek z prawej"
-          ></img>
         </CSSTransition>
       </div>
       <CSSTransition

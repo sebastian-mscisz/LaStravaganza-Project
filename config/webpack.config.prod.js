@@ -41,6 +41,8 @@ module.exports = {
             options: {
               limit: 10000,
               name: "[name].[ext]",
+              outputPath: "assets/images",
+              root: path.resolve(__dirname, "build"),
             },
           },
         ],
@@ -52,7 +54,7 @@ module.exports = {
           options: {
             name: "[name]-[contentHash:6].[ext]",
             outputPath: "assets/images",
-            publicPath: "build/assets/images",
+            root: path.resolve(__dirname, "build"),
           },
         },
       },

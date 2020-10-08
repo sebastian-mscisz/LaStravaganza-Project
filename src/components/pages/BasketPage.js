@@ -117,9 +117,6 @@ class BasketPage extends Component {
       });
     }
   };
-  componentDidUpdate() {
-    // console.log(this.state.userInfo);
-  }
   formValidation = () => {
     let name = false;
     let address = false;

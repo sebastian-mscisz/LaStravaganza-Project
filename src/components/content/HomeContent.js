@@ -26,7 +26,7 @@ const HomeContent = () => {
             <p>
               Nasza restauracja znajduje się w sercu Wrocławia - na rynku.
               Lokalizacja umożliwia łatwe dotarcie z niemal każdej części
-              miasta, a dla tych co woleliby deletkować się pizza w domu,
+              miasta, a dla tych co woleliby delektować się pizza w domu,
               oferujemy dowóz.
             </p>
             <img

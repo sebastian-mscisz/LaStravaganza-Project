@@ -5,10 +5,10 @@ const FooterNewsletter = () => {
     <div className="col-md-3">
       <h4>Zapisz się do newsletter'a!</h4>
       <p>
-        <span class="fas fa-check"></span> Nie ominiesz żadnych promocji!
+        <span className="fas fa-check"></span> Nie ominiesz żadnych promocji!
       </p>
       <p>
-        <span class="fas fa-check"></span> Nie ominą cię żadne wydarzenia!
+        <span className="fas fa-check"></span> Nie ominą cię żadne wydarzenia!
       </p>
       <input
         className="form-control"

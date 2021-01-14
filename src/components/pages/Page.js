@@ -38,16 +38,50 @@ class Page extends Component {
   render() {
     return (
       <Switch>
-        <Route path="/" exact component={HomePage} />
+        <Route
+          path="/"
+          exact
+          render={(props) => (
+            <HomePage
+              {...props}
+              title="La Stravaganza - Restauracja Włoska Wrocław"
+            />
+          )}
+        />
         <Route
           path="/menu"
           render={(props) => (
-            <MenuPage {...props} handleAddItem={this.handleAddItem} />
+            <MenuPage
+              {...props}
+              handleAddItem={this.handleAddItem}
+              title="Menu - Restauracja La Stravaganza"
+            />
           )}
         />
-        <Route path="/promo-deals" component={PromoPage} />
-        <Route path="/about-us" component={AboutPage} />
-        <Route path="/contact" component={ContactPage} />
+        <Route
+          path="/promo-deals"
+          render={(props) => (
+            <PromoPage
+              {...props}
+              title="Promocje - Restauracja La Stravaganza"
+            />
+          )}
+        />
+        <Route
+          path="/about-us"
+          render={(props) => (
+            <AboutPage {...props} title="O nas - Restauracja La Stravaganza" />
+          )}
+        />
+        <Route
+          path="/contact"
+          render={(props) => (
+            <ContactPage
+              {...props}
+              title="Kontakt - Restauracja La Stravaganza"
+            />
+          )}
+        />
         <Route
           path="/basket"
           render={(props) => (
@@ -55,10 +89,18 @@ class Page extends Component {
               {...props}
               handleRemoveItem={this.handleRemoveItem}
               orderList={this.state.orderList}
+              title="Koszyk - Restauracja La Stravaganza"
             />
           )}
         />
-        <Route component={ErrorPage} />
+        <Route
+          render={(props) => (
+            <ErrorPage
+              {...props}
+              title="Nie znaleziono strony - Restauracja La Stravaganza"
+            />
+          )}
+        />
       </Switch>
     );
   }

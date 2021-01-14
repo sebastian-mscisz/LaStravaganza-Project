@@ -10,6 +10,7 @@ class MenuPage extends Component {
     this.setState({
       itemList: data.results,
     });
+    document.title = this.props.title;
   }
   render() {
     return (

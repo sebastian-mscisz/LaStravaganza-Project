@@ -32,7 +32,7 @@ const PromoContent = () => {
           }}
         >
           <img
-            className="col-md-6 p-2 rounded promoImage"
+            className="col-md-6 p-2 promoImage"
             src={promoImage1}
             alt="obrazek z lewej"
           ></img>
@@ -68,7 +68,7 @@ const PromoContent = () => {
           }}
         >
           <img
-            className="col-md-6 p-2 rounded promoImage"
+            className="col-md-6 p-2 promoImage"
             src={promoImage2}
             alt="obrazek z prawej"
           ></img>
@@ -105,7 +105,7 @@ const PromoContent = () => {
           }}
         >
           <img
-            className="col-md-6 p-2 rounded promoImage"
+            className="col-md-6 p-2 promoImage"
             src={promoImage3}
             alt="obrazek z lewej"
           ></img>

@@ -1,6 +1,5 @@
 import React from "react";
 import { CSSTransition } from "react-transition-group";
-import aboutImage1 from "../../assets/images/about-1-image.jpg";
 import aboutImage2 from "../../assets/images/about-2-image.jpg";
 import aboutImage3 from "../../assets/images/about-3-image.jpg";
 import aboutImage4 from "../../assets/images/about-4-image.jpg";
@@ -20,11 +19,6 @@ const AboutContent = () => {
         <div className="text-center p-2">
           <h1>La Stravaganza</h1>
           <h2>Smak włoskiej ekstrawagancji we Wrocławiu</h2>
-          <img
-            className="promoImage"
-            src={aboutImage1}
-            alt="obrazek w tle będzie"
-          ></img>
         </div>
       </CSSTransition>
       <hr className="border-secondary" />

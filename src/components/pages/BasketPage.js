@@ -68,6 +68,9 @@ class BasketPage extends Component {
       </span>
     ),
   };
+  componentDidMount() {
+    document.title = this.props.title;
+  }
   handleSubmit = (e) => {
     e.preventDefault();
     const validation = this.formValidation();

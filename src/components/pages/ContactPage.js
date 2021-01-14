@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ContactContent from "../content/ContactContent";
 
-const ContactPage = () => {
+const ContactPage = (props) => {
+  useEffect(() => {
+    document.title = props.title;
+  });
   return <ContactContent />;
 };
 
